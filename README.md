@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# React RTK Query Infinite Scroll Example
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application built with React, Redux Toolkit Query (RTK Query), React Router DOM 6, and demonstrates infinite scrolling with virtualization using JSON Placeholder API. It follows the Feature Slice Domain (FSD) architecture.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display a list of posts with infinite scroll and virtualization.
+- Each post in the list shows its number, title, and a truncated description with a "View" button.
+- Clicking the "View" button navigates to a separate route displaying the complete post information.
+- Users can navigate back to the post list from the detail view.
 
-## Expanding the ESLint configuration
+==
+==
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# React RTK Query Пример бесконечной прокрутки
 
-- Configure the top-level `parserOptions` property like this:
+Это простое React-приложение, построенное с использованием React, Redux Toolkit Query (RTK Query), React Router DOM 6 и демонстрирующее бесконечную прокрутку с виртуализацией с помощью JSON Placeholder API. Оно следует архитектуре Feature Slice Domain (FSD).
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Особенности
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Отображение списка постов с бесконечной прокруткой и виртуализацией.
+- Для каждого поста в списке отображается его номер, название и усеченное описание с кнопкой "Просмотр".
+- При нажатии на кнопку "Просмотр" пользователь переходит на отдельный маршрут, где отображается полная информация о посте.
+- Пользователи могут вернуться к списку постов из детального представления.

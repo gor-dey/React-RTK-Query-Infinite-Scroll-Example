@@ -1,19 +1,3 @@
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-// export const postApi = createApi({
-//   reducerPath: "postApi",
-//   baseQuery: fetchBaseQuery({
-//     baseUrl: "https://jsonplaceholder.typicode.com/",
-//   }),
-//   endpoints: (builder) => ({
-//     getPosts: builder.query({
-//       query: () => "posts",
-//     }),
-//   }),
-// });
-
-// export const { useGetPostsQuery } = postApi;
-
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const postApi = createApi({
@@ -26,7 +10,17 @@ export const postApi = createApi({
       query: (postId) => `posts/${postId}`,
     }),
     getInfinitePosts: builder.query({
-      query: (page = 1) => `posts?_page=${page}&_limit=10`, // Adjust the page and limit as needed
+      // query: (page = 1) => `posts?_page=${page}&_limit=10`,
+      query: ({ limit = 7, start = 0 }) => ({
+        url: "/posts",
+        params: {
+          _limit: limit,
+          _start: start,
+        },
+      }),
+      merge: (currentCache, newItems) => {
+        currentCache.push(...newItems);
+      },
     }),
   }),
 });

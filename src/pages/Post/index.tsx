@@ -1,4 +1,4 @@
-import { SinglePost } from "../../widgets/SinglePost";
+import { SinglePost } from "@widgets";
 
 export const PostPage = () => {
   return <SinglePost />;
